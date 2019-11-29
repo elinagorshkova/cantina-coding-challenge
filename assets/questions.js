@@ -16,7 +16,26 @@ const attributes = {
   choices: ['class', 'classNames', 'identifier']
   }
 
+  const pickSelectorDynamic = (valuesArray) => {
+  const selectorPick = {
+      type: 'list',
+      name: 'selectorPick',
+      message: '\n Choose a selector',
+      choices: valuesArray,
+    }
+    return selectorPick
+  }
+
+  // Ask whether a user wants to continue browsing the JSON file or they want to exit
+  const anotherSelect = {
+      type: 'confirm',
+      name: 'anotherSelector',
+      message: 'Would you like to choose another attribute?'
+    }
+
 module.exports = {
   begin,
-  attributes
+  attributes,
+  pickSelectorDynamic,
+  anotherSelect
 }
