@@ -5,7 +5,7 @@
 const begin = {
     type: 'confirm',
     name: 'source',
-    message: '\n🙌 Welcome to my program!\nProceed?'
+    message: '\n🙌 Welcome to my program!\n\nThe JSON source is: \nhttps://raw.githubusercontent.com/jdolan/quetoo/master/src/cgame/default/ui/settings/SystemViewController.json\nProceed?'
   }
 
 module.exports = {
