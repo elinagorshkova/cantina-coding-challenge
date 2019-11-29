@@ -17,8 +17,18 @@ program
   .alias('s')
   .description(`"Starting page" of the app`)
   .action(() => {
+    // Asking user if that is OK to proceed with the current url to JSON file
     prompt(begin)
-    .then(res => console.log('Response: ', res))
+    .then(res => {
+        // If user cobnfirms the URL, start the app by calling the program fucntion
+        if (res.source) {
+          console.log('confirmed')
+          // If the user doesn`t confirm the URL, exit.
+        } else {
+          console.log('exit')
+          return
+        }
+      })
   })
 
 
