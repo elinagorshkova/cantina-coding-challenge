@@ -25,7 +25,7 @@ program
           console.log('confirmed')
           // If the user doesn`t confirm the URL, exit.
         } else {
-          console.log('exit')
+          console.log('I don`t currently support other JSON files, sorry😔\nBye!')
           return
         }
       })
