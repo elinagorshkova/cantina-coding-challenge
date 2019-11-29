@@ -63,8 +63,25 @@ store.eachValue = eachValue
 return eachValue
 }
 
+const countingSelectorOccurances = (selector, arrayOfValues, countArray) => {
+  // Choosen by the user selector as a string
+const picked = selector.selectorPick
+// Searching for an index of the picked selector in the array of all selectors.
+// This index will match the index of COUNT object ( [
+  // {value; 'Input', count: 5}
+  // {value: 'something', count: 4}
+// ])
+// so we can acces the number of occuring instances of the picked selector
+const index = arrayOfValues.indexOf(picked)
+const numberOfOccurances = countArray[index].count
+console.log(`Found ${numberOfOccurances} occurances of ${picked} selector`)
+// returning the selector
+return numberOfOccurances
+}
+
 module.exports = {
   fetchingData,
   searchingFunction,
-  findEveryInstance
+  findEveryInstance,
+  countingSelectorOccurances
 }
