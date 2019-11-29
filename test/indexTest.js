@@ -1,5 +1,5 @@
 const assert = require('chai').assert
-const { searchingFunction, findEveryInstance } = require('./../assets/helpers')
+const { searchingFunction, findEveryInstance, countingSelectorOccurances } = require('./../assets/helpers')
 
 // WE NEED A FUNCTION THAT WOULD PARSE A JSON FILE AND WOULD SEARCH THROUGH THE FILE FOR ALL THE VALUES THAT MATCH A CERTAIN KEY
 // a) need a dummy json:
@@ -38,5 +38,14 @@ describe('App', function() {
   it (`should return an array of each instance of the matching attribute: ['Input', 'Box']`, function() {
     const result = findEveryInstance(dummyValuesArray)
     assert.deepEqual(result, ['Input', 'Box'])
+  })
+})
+
+// FROM THE CHALLENGE:
+// There are 26 views in the given JSON file with the class of Input. Ensure the correctness of your program by asserting that it finds all 26 Inputs given the selector "Input".
+describe('App', function() {
+  it(`should find 26 Inputs given the selector <Input>`, function() {
+    const result = countingSelectorOccurances({selectorPick: 'Input'}, ['Input', 'Dummy1'], [ {value: 'Input', count: 26 }, {value: 'Dummy1', count: 2} ])
+    assert.equal(result, '26')
   })
 })
