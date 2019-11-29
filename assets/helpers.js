@@ -1,21 +1,10 @@
 'use strict'
-// Promise based HTTP client for Node.js
-const axios = require('axios')
 
 // Node module, that counts the instances of each value in an array, ignoring any non-string values.
 const count = require('count-array-values')
 
 // Using Store file to store data for further use in it
 const store = require('./../store')
-
-const fetchingData = (url) => {
-  // Fetching the JSON file from the URL
-   axios.get(url)
-  .then((res) => {
-    // Returning the array of all the values matching the attribute from user input (class, classNames, or identifier)
-    return res.data
-    })
-}
 
 const searchingFunction = (jsonFile, lookupKey) => {
   // Declaring and empty array that we will populate with all the matches
@@ -80,7 +69,6 @@ return numberOfOccurances
 }
 
 module.exports = {
-  fetchingData,
   searchingFunction,
   findEveryInstance,
   countingSelectorOccurances
