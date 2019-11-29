@@ -1,6 +1,11 @@
-
 // Commander is a framework for CLI in Node.js
 const program = require('commander')
+
+// Inquirer is a powerful collection of common interactive CL user interfaces
+const { prompt } = require('inquirer')
+
+// Importing a question for the inuirer
+const { begin } = require('./assets/questions')
 
 program
 .version('1.0.0')
@@ -12,7 +17,8 @@ program
   .alias('s')
   .description(`"Starting page" of the app`)
   .action(() => {
-    console.log('Hello world')
+    prompt(begin)
+    .then(res => console.log('Response: ', res))
   })
 
 
