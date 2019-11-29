@@ -1,5 +1,9 @@
 'use strict'
 
-module.exports = {
+const main = () => {
+  console.log('Hello world')
+}
 
+module.exports = {
+  main
 }

@@ -7,6 +7,8 @@ const { prompt } = require('inquirer')
 // Importing a question for the inuirer
 const { begin } = require('./assets/questions')
 
+const { main } = require('./assets/main')
+
 program
 .version('1.0.0')
 .description('Cantina Coding Challenge by E. Gorshkova')
@@ -22,7 +24,7 @@ program
     .then(res => {
         // If user cobnfirms the URL, start the app by calling the program fucntion
         if (res.source) {
-          console.log('confirmed')
+          main()
           // If the user doesn`t confirm the URL, exit.
         } else {
           console.log('I don`t currently support other JSON files, sorry😔\nBye!')
